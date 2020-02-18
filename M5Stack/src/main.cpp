@@ -42,6 +42,23 @@ void loop()
   M5.IMU.getAhrsData(&pitch,&roll,&yaw);
   M5.IMU.getTempData(&temp);
   
+  SerialBT.write(gyroX);
+  SerialBT.write(gyroY);
+  SerialBT.write(gyroZ);
+
+  SerialBT.write(accX);
+  SerialBT.write(accY);
+  SerialBT.write(accZ);
+
+  SerialBT.write(pitch);
+  SerialBT.write(roll);
+  SerialBT.write(yaw);
+
+  SerialBT.write(temp);
+
+  SerialBT.write('\n');
+  delay(100);
+
   // M5.Lcd.setCursor(0, 20);
   // M5.Lcd.printf("%6.2f  %6.2f  %6.2f      ", gyroX, gyroY, gyroZ);
   // M5.Lcd.setCursor(220, 42);
@@ -60,10 +77,10 @@ void loop()
   // delay(1);
 
 
-  if(Serial.available()){
-    SerialBT.write(Serial.read());
-  }
-  if(SerialBT.available()){
-    Serial.write(SerialBT.read());
-  }
+  // if(Serial.available()){
+  //   SerialBT.write(Serial.read());
+  // }
+  // if(SerialBT.available()){
+  //   Serial.write(SerialBT.read());
+  // }
 }
