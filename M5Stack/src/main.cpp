@@ -16,7 +16,7 @@ float gyroZ = 0.0F;
 
 float pitch = 0.0F;
 float roll  = 0.0F;
-float yaw   = 0.0F;
+float yaw   = 0.0F; //noice dick
 
 float temp  = 0.0F;
 
